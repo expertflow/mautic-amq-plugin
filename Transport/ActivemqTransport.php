@@ -103,22 +103,14 @@ class ActivemqTransport implements TransportInterface
      */
     public function sendSms(Lead $lead, $content)
     {
-
-        // $leadModel = $this->get('mautic.model.factory')->getModel('lead');
-        // $lead = $leadModel->getEntity();
-
-        // $lead->setEmail('user@mailinator.com');
-        // $leadModel->saveEntity($lead);
-        // $fields = $lead->getFields();
-        // $country_code = $fields['core']['country_code']['value'];
-
         $number = $lead->getLeadPhoneNumber();
+        $lead_id = $lead->getId();
+        $fields = $lead->getFields();
+        $country_code = $fields['core']['country_code']['value'];
            
         // make a connection
         $client = new Client('tcp://173.212.195.56:61613');
         $stomp = new SimpleStomp($client);
-        $lead_id = $lead->getId();
-
 
         // send a message to the queue
         $body = array(
@@ -130,9 +122,9 @@ class ActivemqTransport implements TransportInterface
                 'name'=>'Expertflow Admin',
                 'firstName'=>'Expertflow',
                 'lastName'=>'Admin',
-                'type' => 'Agent/Bot'
+                'type' => 'Agent'
             ],
-            'to'=> $number,
+            'to'=> $country_code.$number,
             'timestamp'=> Date('Y-m-d H:i:s'),
             'tag'=> '',
             'refId'=> $number,
@@ -143,26 +135,10 @@ class ActivemqTransport implements TransportInterface
             'attachments'=> [],
             'buttons'=> [],
             'botResponseType'=> 'simple'
-
         );
-        $headers = array('type' => 'SendSms');
+        $headers = array('type' => 'SendSms','persistent' => 'true');
  
-        $client->send('/queue/sms', json_encode($body), $header);
-
-       // $stomp->subscribe('/queue/test', 'transform-test', 'client', null, ['Type' => 'SendSms']);
-        //$msg = $stomp->read();
-
-        // extract
-        // if ($msg != null) {
-        //     // echo 'Received array: ';
-        //     // print_r($msg->map);
-        //     // // mark the message as received in the queue
-        //     // $stomp->ack($msg);
-        //     $this->logger->addInfo('SMS Sent', []);
-        // } else {
-        //     // echo "Failed to receive a message\n";
-        //     $this->logger->addError('Server response error.',[]);
-        // }
+        $client->send('/queue/sms', json_encode($body), $headers);
 
         return true;
     }
