@@ -109,6 +109,8 @@ class ActivemqTransport implements TransportInterface
 
         // $lead->setEmail('user@mailinator.com');
         // $leadModel->saveEntity($lead);
+        // $fields = $lead->getFields();
+        // $country_code = $fields['core']['country_code']['value'];
 
         $number = $lead->getLeadPhoneNumber();
            
@@ -143,10 +145,9 @@ class ActivemqTransport implements TransportInterface
             'botResponseType'=> 'simple'
 
         );
-        $header = array();
-        $header['Type'] = 'SendSms';
+        $headers = array('type' => 'SendSms');
  
-        $client->send('/queue/test', json_encode($body), $header);
+        $client->send('/queue/sms', json_encode($body), $header);
 
        // $stomp->subscribe('/queue/test', 'transform-test', 'client', null, ['Type' => 'SendSms']);
         //$msg = $stomp->read();
