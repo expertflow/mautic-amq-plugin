@@ -105,8 +105,6 @@ class ActivemqTransport implements TransportInterface
     {
         $number = $lead->getLeadPhoneNumber();
         $lead_id = $lead->getId();
-        $fields = $lead->getFields();
-        $country_code = $fields['core']['country_code']['value'];
            
         // make a connection
         $client = new Client('tcp://173.212.195.56:61613');
@@ -124,7 +122,7 @@ class ActivemqTransport implements TransportInterface
                 'lastName'=>'Admin',
                 'type' => 'Agent'
             ],
-            'to'=> $country_code.$number,
+            'to'=> $number,
             'timestamp'=> Date('Y-m-d H:i:s'),
             'tag'=> '',
             'refId'=> $number,
