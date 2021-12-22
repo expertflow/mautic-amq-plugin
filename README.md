@@ -37,21 +37,21 @@ After configure the plugin.
 
 1. Go to `Channels -> Text Messages`.
 2. Create a text message with any content.
-3. Create some new Contacts having valid email and mobile number field.
-4. Go to Segments.
+3. Add/update contacts with a valid email address and a mobile number.
+4. Go to `Segments`.
 5. Create a new Segment: Add filter having contacts with valid Mobile numbers in it.
-6. Go to Campaigns.
+6. Go to `Campaigns`.
 7. Create a new campaign: Contact Sources: Campaign Segment.
-8. Choose the Segment you created early.
+8. Choose the Segment created in step 5.
 9. In the next step, select Action.
 10. In the Select box, choose Send Text Messages.
 11. In the box of Send Text Messages, put a name and choose the message - that you created early.
-12. Click on the Publish button and Save your campaign.
+12. Click the publish button and save your campaign.
 
 
 ### To run the Campaign.
 
-Execute the Following Commands.
+Execute the following commands.
 
 1. `php bin/console cache:clear`
 2. `php bin/console mautic:segments:update`
