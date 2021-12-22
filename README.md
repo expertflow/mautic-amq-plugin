@@ -1,14 +1,7 @@
-# ActiveMQ Transport plugin for Mautic 3
-
-Plugin to provide ActiveMQ text message transport to Mautic.
-
-##Synopsis
-
-This project is a Plugin to Send Mobile Text Messages using ActiveMQ. Mautic have integration with Twilio only, so this plugin is a new alternative to the users of Mautic.
-
+# ActiveMQ Transport plugin for Mautic 3.x
+This Mautic plugin can send a Mautic campaign message as an ActiveMQ message. 
 
 ## Requirements
-
 1. Mautic 3.2
 2. PHP 7+
 3. Stomp-php 5.0.0 (https://github.com/stomp-php/stomp-php)
