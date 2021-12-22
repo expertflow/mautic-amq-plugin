@@ -10,11 +10,11 @@ This Mautic plugin can send a Mautic campaign message as an ActiveMQ message.
 
 ## How to install
 
-### Pre-Requisite
+### Prerequisites
 
-1. Go to Vendor folder in mautic's server directory using sftp access (html/vendor/)
-2. Create new folder of name `stomp-php`
-3. Download Stomp-php release 5.0.0 (https://github.com/stomp-php/stomp-php)
+1. Go to the **Vendor** folder in the Mautic server directory using sftp access (html/vendor/)
+2. Create a new folder named `stomp-php`
+3. Download Stomp-php release 5.0.0 from (https://github.com/stomp-php/stomp-php)
 4. Extract it to vendor/stomp-php/ folder.
 5. Run `rm -rf var/cache/*` 
 
@@ -22,20 +22,20 @@ This Mautic plugin can send a Mautic campaign message as an ActiveMQ message.
 ### Plugin Installation (do not use composer at this time)
 
 1. Download https://github.com/expertflow/mautic-amq-plugin
-2. Extract it to plugins/MauticActivemqTransportBundle
-3. Delete `app/cache/prod` or Run `rm -rf var/cache/*` to clear cache 
-4. Go to Plugins in Mautic's admin menu (/s/plugins)
-5. Click on the `Install / Upgrade Plugin` button to install plugin or Run `php app/console mautic:plugins:install` to install plugin via commandline
-6. Go to Mautic's Configuration (/s/config/edit), click on the Text Message Settings, then choose ActiveMQ as the default transport.
+2. Extract it to `plugins/MauticActivemqTransportBundle`
+3. Delete `app/cache/prod` or run `rm -rf var/cache/*` to clear the cache 
+4. Go to `Plugins` in the Mautic admin menu (/s/plugins)
+5. Click on the `Install / Upgrade Plugin` button to install plugin or run `php app/console mautic:plugins:install` to install plugin via commandline
+6. Go to Mautic configuration (/s/config/edit) and click on the **Text Message Settings**, then choose **ActiveMQ** as the default transport.
 
 
 ## Send Test Text Message
 
-### Setup Campaign to Send Text Message
+### Setup Campaign to Send Text Message via ActiveMQ
 
 After configure the plugin.
 
-1. Go to Channels -> Text Messages.
+1. Go to `Channels -> Text Messages`.
 2. Create a text message with any content.
 3. Create some new Contacts having valid email and mobile number field.
 4. Go to Segments.
