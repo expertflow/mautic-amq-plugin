@@ -16,7 +16,7 @@
       "install-directory-name": "MauticActivemqTransportBundle"
   },
   "require": {
-    "mautic/composer-plugin": "^1.0",
+    "mautic/composer-plugin": "^2.0",
     "mautic/mautic": "^3.2",
     "mautic/core-lib": "^4.0",
     "php" : ">=7.4.0 <8.1", 
