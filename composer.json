@@ -1,20 +1,26 @@
 {
-  "name": "galvani/mautic-activemq-transport-bundle",
-  "description": "This plugin enables activemq messaging service in Mautic ",
+  "name": "expertflow/mautic-activemq-transport-bundle",
+  "description": "This Mautic plugin can send a Mautic campaign message as an ActiveMQ message.",
   "type": "mautic-plugin",
-  "version": "2.0.2",
+  "version": "1.0",
   "keywords": ["activemq","mautic","plugin","sms","transport"],
   "authors": [
     {
-      "name": "Lokesh Joshi",
-      "email": "lokesh.j@cisinlabs.com",
-      "homepage": "https://github.com/lokesh",
-      "role": "Developer"
+      "name": "Expertflow",
+      "email": "helpdesk@expertflow.com",
+      "homepage": "https://github.com/expertflow",
+      "role": "Organization"
     }
   ],
+  "extra": { 
+      "install-directory-name": "MauticActivemqTransportBundle"
+  },
   "require": {
     "mautic/composer-plugin": "^1.0",
-    "mautic/mautic": "^3.2"
+    "mautic/mautic": "^3.2",
+    "mautic/core-lib": "^4.0",
+    "php" : ">=7.4.0 <8.1", 
+    "ext-zip": "^1.15"
   },
   "scripts": {
     "csfixer": "../../bin/php-cs-fixer fix . -v --dry-run --diff --using-cache=no",
