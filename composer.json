@@ -3,7 +3,7 @@
   "description": "This Mautic plugin can send a Mautic campaign message as an ActiveMQ message.",
   "type": "mautic-plugin",
   "version": "1.0",
-  "keywords": ["activemq","mautic","plugin","sms","transport"],
+  "keywords": ["hybridChat","activemq","mautic","plugin","sms","transport"],
   "authors": [
     {
       "name": "Expertflow",
