@@ -1,5 +1,5 @@
-# ActiveMQ Transport plugin for Mautic 3.x
-This Mautic plugin can send a Mautic campaign message as an ActiveMQ message. 
+# Universal chat for Mautic 3.x
+Universal chat for Mautic Webchat, SMS, Whatsapp, Facebook Messenger, LiveChat, and plugin to any chatbot (Rasa, Google Dialogflow, IBM Watson,...). 
 
 ## Requirements
 1. Mautic 3.2
