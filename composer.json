@@ -1,6 +1,6 @@
 {
-  "name": "expertflow/mautic-activemq-transport-bundle",
-  "description": "This Mautic plugin can send a Mautic campaign message as an ActiveMQ message.",
+  "name": "expertflow/universal-chat-for-mautic",
+  "description": "Universal chat for Mautic Webchat, SMS, Whatsapp, Facebook Messenger, LiveChat, and plugin to any chatbot (Rasa, Google Dialogflow, IBM Watson,...).",
   "type": "mautic-plugin",
   "version": "1.0",
   "keywords": ["hybridChat","activemq","mautic","plugin","sms","transport"],
