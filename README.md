@@ -4,19 +4,16 @@ Universal chat for Mautic Webchat, SMS, Whatsapp, Facebook Messenger, LiveChat, 
 ## Requirements
 1. Mautic 3.2
 2. PHP 7+
-3. Stomp-php 5.0.0 (https://github.com/stomp-php/stomp-php)
-4. https://github.com/expertflow/mautic-amq-plugin
+3. Composer 1+ (Recommended 1.10.22)
+4. stomp-php/stomp-php: Stomp PHP Client (can be installed by composer command).
 
 
 ## How to install
 
 ### Prerequisites
 
-1. Go to the **Vendor** folder in the Mautic server directory using sftp access (html/vendor/)
-2. Create a new folder named `stomp-php`
-3. Download Stomp-php release 5.0.0 from (https://github.com/stomp-php/stomp-php)
-4. Extract it to vendor/stomp-php/ folder.
-5. Run `rm -rf var/cache/*` 
+1. Run `composer require stomp-php/stomp-php` to install stomp-php client.
+2. Run `rm -rf var/cache/*` 
 
 
 ### Plugin Installation (do not use composer at this time)
